@@ -1,0 +1,23 @@
+<head>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2e86de;
+    }
+
+    img {
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #d35400;
+      text-decoration: none;
+    }
+  </style>
+</head>
