@@ -1,23 +1,62 @@
-<head>
-  <style>
-    body {
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #2e86de;
-    }
-
-    img {
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-
-    a {
-      color: #d35400;
-      text-decoration: none;
-    }
-  </style>
-</head>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: teal;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input, button {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    position: relative;
+  }
+  
+  li::after {
+    content: "❌";
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+  
