@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Project</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Carousel + API Fetch</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>My Web Project</h1>
+    <h1>🌍 Explore & Laugh!</h1>
   </header>
 
-  <main class="grid-container">
-    <!-- Contact Form -->
-    <section class="form-section">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <button type="submit">Submit</button>
-        <p id="formError" class="error"></p>
-      </form>
-    </section>
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <img id="carousel-img" src="https://source.unsplash.com/random/800x400?nature,1" alt="Carousel">
+    <div class="buttons">
+      <button onclick="prevSlide()">⬅️</button>
+      <button onclick="nextSlide()">➡️</button>
+    </div>
+  </section>
 
-    <!-- To-Do List -->
-    <section class="todo-section">
-      <h2>To-Do List</h2>
-      <input type="text" id="taskInput" placeholder="Add a task" />
-      <button onclick="addTask()">Add Task</button>
-      <ul id="taskList"></ul>
-    </section>
-  </main>
+  <!-- Joke Section -->
+  <section class="joke-section">
+    <h2>😂 Need a Joke?</h2>
+    <p id="joke-text">Click below to lighten the mood!</p>
+    <button onclick="fetchJoke()">Get a Joke</button>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ and JavaScript</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
