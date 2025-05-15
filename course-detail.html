@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="course-page-title">Course Detail - LearnSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <!-- ... (same navigation as index.html) ... -->
+    </header>
+
+    <main>
+        <section class="course-content">
+            <img src="images/placeholder.jpg" alt="Course Image" id="course-image" class="course-banner">
+            <h1 id="course-title">Course Title</h1>
+            <p class="instructor">Instructor: <span id="course-instructor">Instructor Name</span></p>
+            <p class="category">Category: <span id="course-category">Category</span></p>
+            <div class="course-meta">
+                <span>Difficulty: <span id="course-difficulty">Beginner</span></span>
+                <span>Price: <span id="course-price">$0.00</span></span>
+            </div>
+
+            <h2>Description</h2>
+            <p id="course-description">Full course description goes here...</p>
+
+            <h2>Curriculum</h2>
+            <ul id="course-curriculum">
+                <!-- Lessons will be loaded here -->
+                <li>Module 1: Introduction</li>
+                <li>Module 2: Core Concepts</li>
+            </ul>
+
+            <button id="enroll-button" class="btn-primary">Enroll Now</button>
+
+            <h2>Reviews</h2>
+            <div id="course-reviews">
+                <!-- Reviews will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- ... (same footer as index.html) ... -->
+    </footer>
+    <script src="js/data/courses.json"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

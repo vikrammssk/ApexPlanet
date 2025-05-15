@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - LearnSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LearnSphere</a>
+            <ul id="nav-links">
+                <!-- Navigation will be updated by JS -->
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>My Enrolled Courses</h1>
+        <section id="enrolled-courses-section">
+            <div class="course-grid" id="enrolled-courses-grid">
+                <!-- Enrolled courses will be loaded here by JavaScript -->
+                <p id="no-courses-message" style="display:none;">You haven't enrolled in any courses yet. <a href="courses.html">Browse courses</a>.</p>
+            </div>
+        </section>
+    </main>
+    <footer><p>&copy; 2023 LearnSphere. All rights reserved.</p></footer>
+    <script src="js/data/courses.json"></script> <!-- To access course details -->
+    <script src="js/auth.js"></script> <!-- For checking login state -->
+    <script src="js/main.js"></script>
+</body>
+</html>

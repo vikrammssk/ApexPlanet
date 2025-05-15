@@ -1,140 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, nav, footer { background-color: #333; color: white; padding: 1em; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; }
-    section { padding: 2em; }
-    .container { max-width: 900px; margin: auto; }
-    input, button, select { padding: 0.5em; margin: 0.5em 0; }
-    .todo-item, .product { border: 1px solid #ccc; padding: 0.5em; margin-bottom: 0.5em; }
-    .product { display: flex; justify-content: space-between; }
-    @media (max-width: 600px) {
-      .product { flex-direction: column; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnSphere - Your Gateway to Knowledge</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header><h1>My Portfolio</h1></header>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LearnSphere</a>
+            <ul id="nav-links">
+                <!-- Navigation links will be populated by js/main.js -->
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>I am a passionate web developer showcasing my skills through real projects.</p>
-  </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Unlock Your Potential with Our Courses</h1>
+                <p>Explore a wide range of courses taught by industry experts. Start your learning journey today!</p>
+                <a href="courses.html" class="btn-primary">Browse All Courses</a>
+            </div>
+        </section>
 
-  <section id="projects" class="container">
-    <h2>Projects</h2>
+        <section class="featured-courses">
+            <div class="container">
+                <h2>Featured Courses</h2>
+                <p class="section-subtitle">Handpicked courses to get you started</p>
+                <div class="course-grid" id="featured-courses-grid">
+                    <!--
+                        Course cards will be dynamically inserted here by JavaScript.
+                        Example structure for one card (for your reference):
+                        <article class="course-card">
+                            <img src="images/placeholder.jpg" alt="Course Title">
+                            <h3>Course Title</h3>
+                            <p class="instructor">By: Instructor Name</p>
+                            <p class="category">Category</p>
+                            <p class="price">Free/$XX.XX</p>
+                            <a href="course-detail.html?id=1" class="btn-primary">View Details</a>
+                        </article>
+                    -->
+                    <p>Loading featured courses...</p>
+                </div>
+            </div>
+        </section>
 
-    <h3>To-Do List</h3>
-    <input type="text" id="taskInput" placeholder="Add a new task" />
-    <button onclick="addTask()">Add Task</button>
-    <div id="taskList"></div>
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why LearnSphere?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="images/icons/expert.svg" alt="Expert Instructors" class="feature-icon"> <!-- Create or find an icon -->
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from seasoned professionals and industry leaders.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images/icons/flexible.svg" alt="Flexible Learning" class="feature-icon"> <!-- Create or find an icon -->
+                        <h3>Flexible Learning</h3>
+                        <p>Study at your own pace, anytime, anywhere.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images/icons/community.svg" alt="Supportive Community" class="feature-icon"> <!-- Create or find an icon -->
+                        <h3>Supportive Community</h3>
+                        <p>Connect with fellow learners and grow together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <h3>Product Page</h3>
-    <label for="categoryFilter">Category:</label>
-    <select id="categoryFilter" onchange="filterProducts()">
-      <option value="all">All</option>
-      <option value="electronics">Electronics</option>
-      <option value="books">Books</option>
-    </select>
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2023</span> LearnSphere. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
 
-    <label for="sortOption">Sort by:</label>
-    <select id="sortOption" onchange="sortProducts()">
-      <option value="rating">Rating</option>
-      <option value="price">Price</option>
-    </select>
-
-    <div id="productList"></div>
-  </section>
-
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Email: example@email.com</p>
-  </section>
-
-  <footer>&copy; 2025 My Portfolio</footer>
-
-  <script>
-    // To-Do List with localStorage
-    const taskInput = document.getElementById('taskInput');
-    const taskList = document.getElementById('taskList');
-
-    function loadTasks() {
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      taskList.innerHTML = '';
-      tasks.forEach((task, index) => { 
-        const div = document.createElement('div');
-        div.className = 'todo-item';
-        div.innerHTML = `${task} <button onclick="removeTask(${index})">Remove</button>`;
-        taskList.appendChild(div);
-      });
-    }
-
-    function addTask() {
-      const task = taskInput.value.trim();
-      if (!task) return;
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      tasks.push(task);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      taskInput.value = '';
-      loadTasks();
-    }
-
-    function removeTask(index) {
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      tasks.splice(index, 1);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      loadTasks();
-    }
-
-    loadTasks();
-
-    // Product Page with filter/sort
-    const products = [
-      { name: 'Laptop', category: 'electronics', price: 50000, rating: 4.5 },
-      { name: 'Smartphone', category: 'electronics', price: 20000, rating: 4.3 },
-      { name: 'Book A', category: 'books', price: 300, rating: 4.8 },
-      { name: 'Book B', category: 'books', price: 450, rating: 4.2 }
-    ];
-
-    function displayProducts(filteredProducts) {
-      const productList = document.getElementById('productList');
-      productList.innerHTML = '';
-      filteredProducts.forEach(product => {
-        const div = document.createElement('div');
-        div.className = 'product';
-        div.innerHTML = `<span>${product.name} (${product.category})</span><span>₹${product.price} | ⭐${product.rating}</span>`;
-        productList.appendChild(div);
-      });
-    }
-
-    function filterProducts() {
-      const category = document.getElementById('categoryFilter').value;
-      let filtered = category === 'all' ? products : products.filter(p => p.category === category);
-      sortAndDisplay(filtered);
-    }
-
-    function sortProducts() {
-      filterProducts(); // sorting is handled inside here
-    }
-
-    function sortAndDisplay(list) {
-      const sortOption = document.getElementById('sortOption').value;
-      if (sortOption === 'rating') list.sort((a, b) => b.rating - a.rating);
-      else if (sortOption === 'price') list.sort((a, b) => a.price - b.price);
-      displayProducts(list);
-    }
-
-    filterProducts();
-  </script>
+    <!-- Ensure js/data/courses.json exists for JS to fetch -->
+    <!-- <script src="js/data/courses.json"></script> --> <!-- No longer needed if fetched -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script to update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

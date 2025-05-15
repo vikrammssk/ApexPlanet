@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LearnSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LearnSphere</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container auth-form">
+        <h2>Login to Your Account</h2>
+        <form id="login-form">
+            <div>
+                <label for="username">Username or Email:</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            <p id="login-message"></p>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+    </main>
+    <footer><p>&copy; 2023 LearnSphere. All rights reserved.</p></footer>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script> <!-- For common functions like updateNav -->
+</body>
+</html>

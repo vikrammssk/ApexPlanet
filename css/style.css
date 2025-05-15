@@ -1,0 +1,622 @@
+/* === Global & Basic === */
+:root {
+    --primary-color: black; /* A nice blue */
+    --secondary-color: lightblue; /* A teal accent */
+    --dark-color: darkgrey;
+    --light-color: lightgrey;
+    --text-color: black;
+    --font-family: 'Poppins', 'Arial', sans-serif; /* Add Poppins from Google Fonts for a modern look */
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Import Poppins from Google Fonts - Add this at the top of your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden; /* Clears floats */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #3a75c4; /* Darker shade of primary */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background: #3a75c4; /* Darker shade */
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+.btn-secondary:hover {
+    background: #40c0a0; /* Darker shade */
+    transform: translateY(-2px);
+}
+
+
+/* === Header & Navigation === */
+header {
+    background: #fff;
+    color: var(--dark-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header .logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+header ul#nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 0; /* Reset user agent stylesheet */
+    margin-bottom: 0; /* Reset user agent stylesheet */
+}
+
+header ul#nav-links li {
+    margin-left: 25px;
+}
+
+header ul#nav-links li a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+}
+header ul#nav-links li a::after { /* Underline effect on hover/active */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+header ul#nav-links li a:hover::after,
+header ul#nav-links li a.active::after {
+    width: 100%;
+}
+header ul#nav-links li a.active {
+    color: var(--primary-color);
+}
+
+
+/* === Hero Section (Homepage) === */
+.hero {
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.85), rgba(80, 227, 194, 0.85)), url('../images/hero-bg.jpg') no-repeat center center/cover; /* Add a nice background image */
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content {
+    max-width: 700px;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: white;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+.hero .btn-primary {
+    font-size: 1.1rem;
+    padding: 15px 35px;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+.hero .btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* === Featured Courses Section / Course Catalog Section === */
+.featured-courses, .course-catalog, .why-choose-us {
+    padding: 60px 0;
+}
+.featured-courses {
+    background-color: #fff; /* Slightly different bg for visual separation */
+}
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+.featured-courses h2, .course-catalog h2, .why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Reduced for subtitle */
+}
+
+
+/* === Course Grid & Cards === */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+.course-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures image corners are rounded if image overflows */
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column; /* Makes button stick to bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.course-card-content { /* Add a wrapper for text content if needed for padding */
+    padding: 20px;
+    flex-grow: 1; /* Allows this section to grow, pushing button down */
+    display: flex;
+    flex-direction: column;
+}
+.course-card h3 {
+    font-size: 1.3rem;
+    margin-top: 0; /* If using course-card-content */
+    margin-bottom: 8px;
+}
+.course-card .instructor, .course-card .category {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+.course-card .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    margin-top: auto; /* Pushes price and button down */
+}
+.course-card .btn-primary {
+    width: 100%;
+    text-align: center;
+    margin-top: auto; /* Pushes button to the bottom if not wrapped in content */
+    /* If inside course-card-content, this might not be needed,
+       but ensure the parent of this button is flex-column and the content area has flex-grow:1 */
+}
+/* If your .course-card directly contains elements without a separate content div: */
+.course-card > *:not(img) { /* Apply padding to all direct children except image */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.course-card > h3 { padding-top: 20px; } /* Add top padding for first text element */
+.course-card > .btn-primary { padding-bottom: 20px; } /* Add bottom padding for last element */
+
+
+/* === Why Choose Us Section (Homepage) === */
+.why-choose-us {
+    background-color: var(--light-color);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.feature-item {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+.feature-icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    margin-bottom: 20px;
+    /* Consider using SVG icons for better scaling and color control */
+}
+
+
+/* === Page Header (For inner pages like Courses.html) === */
+.page-header {
+    background: var(--dark-color);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.page-header h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+.page-header p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+
+/* === Filters (Courses Page) === */
+.filters {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    align-items: center;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input/select */
+    flex-grow: 1; /* Allow groups to grow */
+}
+.filter-group label 
+
+
+/* Basic Reset & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    color: #5cb85c; /* Accent color */
+}
+
+/* Main Content Sections */
+main {
+    padding: 20px 0;
+}
+
+.hero {
+    background: #5cb85c; /* Accent color */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #555;
+}
+
+.featured-courses, .course-catalog, .course-content {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Course Grid & Cards */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.course-card img {
+    max-width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.course-card .price {
+    font-weight: bold;
+    color: #5cb85c;
+    margin-bottom: 10px;
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filters select, .filters input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Course Detail Page */
+.course-banner {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.course-meta span {
+    margin-right: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+#course-curriculum {
+    list-style: none;
+    padding-left: 0;
+}
+#course-curriculum li {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 30px;
+}
+
+/* Responsive (very basic example) */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+    header ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    header ul li {
+        margin: 5px 0;
+    }
+    .course-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ... (previous CSS styles) ... */
+
+/* Authentication Forms */
+.auth-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-form div {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.auth-form p {
+    margin-top: 15px;
+    text-align: center;
+}
+#login-message, #register-message {
+    text-align: center;
+    margin-top:10px;
+    font-weight: bold;
+}
+.success-message { color: green; }
+.error-message { color: red; }
+
+/* Navigation Active State */
+header nav ul li a.active {
+    color: #5cb85c; /* Or your accent color */
+    font-weight: bold;
+}

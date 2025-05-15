@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "title": "Introduction to Web Development",
+        "category": "programming",
+        "instructor": "Jane Doe",
+        "description": "Learn the fundamentals of HTML, CSS, and JavaScript to build your first website.",
+        "imageUrl": "images/web-dev.jpg",
+        "price": "Free",
+        "difficulty": "Beginner",
+        "modules": [
+            "Welcome to Web Development",
+            "HTML Basics",
+            "CSS Fundamentals",
+            "JavaScript Essentials",
+            "Building Your First Page"
+        ],
+        "reviews": [
+            {"user": "Alice", "rating": 5, "comment": "Great course for beginners!"},
+            {"user": "Bob", "rating": 4, "comment": "Very informative."}
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Advanced JavaScript Concepts",
+        "category": "programming",
+        "instructor": "John Smith",
+        "description": "Dive deep into JavaScript closures, prototypes, async/await, and more.",
+        "imageUrl": "images/js-advanced.jpg",
+        "price": "$49.99",
+        "difficulty": "Advanced",
+        "modules": [
+            "Recap of JS Fundamentals",
+            "Closures and Scope",
+            "Prototypal Inheritance",
+            "Asynchronous JavaScript (Promises, Async/Await)",
+            "Functional Programming in JS"
+        ],
+        "reviews": []
+    },
+    {
+        "id": 3,
+        "title": "Graphic Design Fundamentals",
+        "category": "design",
+        "instructor": "Emily White",
+        "description": "Understand the principles of design, color theory, typography, and layout.",
+        "imageUrl": "images/graphic-design.jpg",
+        "price": "$29.99",
+        "difficulty": "Beginner",
+        "modules": ["Intro to Design", "Color Theory", "Typography", "Layout Principles"],
+        "reviews": []
+    }
+]

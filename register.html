@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LearnSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LearnSphere</a>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container auth-form">
+        <h2>Create Your Account</h2>
+        <form id="register-form">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="reg-username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="reg-email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="reg-password" name="password" required>
+            </div>
+            <button type="submit" class="btn-primary">Register</button>
+            <p id="register-message"></p>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </main>
+    <footer><p>&copy; 2023 LearnSphere. All rights reserved.</p></footer>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script> <!-- For common functions like updateNav -->
+</body>
+</html>
